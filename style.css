@@ -10,18 +10,18 @@
 h1 {
     font-size: 50px;
     line-height: 64px;
-    color: brown;
+    color: rgb(180, 21, 21);
 }
 
 h2 {
     font-size: 46px;
     line-height: 54px;
-    color: brown;
+    color: rgb(1, 0, 0);
 }
 
 h4 {
     font-size: 20px;
-    color: brown;
+    color: beige;
 }
 
 h6 {
@@ -31,7 +31,7 @@ h6 {
 
 p {
     font-size: 16px;
-    color: rgb(27, 45, 26);
+    color: black;
     margin: 15px 0 20px 0;
 }
 
@@ -75,3 +75,24 @@ body {
 }
 
 
+#main_home{
+    background-image: url("img/hq2.jpg");
+    height: 120vh;
+    width:  100%;
+    padding: 40px 10px;
+    background-size: cover;
+    background-position: top 90% right 0%;
+
+}
+
+#main_home button{
+    background-image:url("img/button.png");
+    background-color: transparent;
+    color: rgb(53, 3, 3);
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 15px;
+}
