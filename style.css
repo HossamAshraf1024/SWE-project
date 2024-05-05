@@ -47,7 +47,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80;
+    padding: 0px 20px;
     background: #F4C9A9;
 }
 
@@ -68,3 +68,10 @@ body {
     font-weight: 600;
     color: brown;
 }
+
+#navbar li a:hover,
+#navbar li a.active{
+    color:rgb(53, 3, 3);
+}
+
+
