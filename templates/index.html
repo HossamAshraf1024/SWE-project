@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <section id="header">
-        <a href="#"><img src="img/logo/F4C9A9.jpg" alt=""></a>
+        <a href="#"><img src="/static/img/logo/F4C9A9.jpg" alt=""></a>
 
         <div>
             <ul id="navbar"> 
-                <li><a class="active" href="index.html">Home</a></li>
+                <li><a class="active" href="/home">Home</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="tips.html">Tips</a></li>
                 <li><a href="history.html">History</a></li>
                 <li><a href="cart.html">
                     <i class="far fa-shopping-bag"></i>
                 </a></li> 
+                <li><a href="/logout">Logout</a></li> <!-- Add this line for logout -->
 
             </ul>
         </div>
     </section>
 
     <section id="main_home">
-        <h2>Explore our wide range of premium coffee products sourced from around the world.</h2>
+        <h3>Explore our wide range of premium coffee products sourced from around the world.</h3>
         <h1>Discover Your Perfect Cup</h1>
         <a href="shop.html"><button>Shop now</button></a>
     </section>

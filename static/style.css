@@ -7,6 +7,12 @@
     font-family: 'Spartan', sans-serif;
 }
 
+body {
+    background-image: url("img/hq2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
 h1 {
     font-size: 50px;
     line-height: 64px;
@@ -16,7 +22,13 @@ h1 {
 h2 {
     font-size: 46px;
     line-height: 54px;
-    color: rgb(1, 0, 0);
+    color: #F0EAD7;
+}
+
+h3 {
+    font-size: 46px;
+    line-height: 54px;
+    color: beige;
 }
 
 h4 {
@@ -37,10 +49,6 @@ p {
 
 .section-p1 {
     padding: 40px 80px;
-}
-
-body {
-    width: 100%;
 }
 
 #header {
@@ -74,15 +82,11 @@ body {
     color:rgb(53, 3, 3);
 }
 
-
-#main_home{
-    background-image: url("img/hq2.jpg");
-    height: 120vh;
-    width:  100%;
+#main_home,
+#main_registration,
+#main_login {
     padding: 40px 10px;
-    background-size: cover;
-    background-position: top 90% right 0%;
-
+    text-align: center;
 }
 
 #main_home button{
