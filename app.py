@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 import sqlite3
 
 app = Flask(__name__)
@@ -60,10 +61,41 @@ def register_user():
         
         return redirect(url_for('login'))
 
+@app.route('/shop')
+def shop():
+    # Get coffee data
+    coffees = get_coffee_data()
+    for coffee in coffees:
+        print(coffee['image'])
+    # Render the shop page with coffee data
+    return render_template('shop.html', coffees=coffees)
+
+
 @app.route('/logout')
 def logout():
     # Perform logout actions here if necessary
     return redirect(url_for('register'))  # Redirect to the register page after logout
 
+
+
+
+# Function to get coffee data
+def get_coffee_data():
+    coffees = []
+    # Directory containing coffee images
+    image_dir = 'static/coffee_images'
+    for filename in os.listdir(image_dir):
+        if filename.endswith('.jpg'):
+            # Extract coffee name and price from filename
+            name, price = filename.split('_')
+            price = price[:-4]  # Remove '.jpg' extension
+            # Append coffee data to the list
+            coffees.append({'name': name, 'price': price, 'image': 'coffee_images'+'/'+filename})
+    return coffees
+
+
+
+
 if __name__ == '__main__':
+    print("hooooooo")
     app.run(debug=True)

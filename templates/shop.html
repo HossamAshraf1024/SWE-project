@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<style>
+    .coffee-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 columns grid with auto-fit */
+        gap: 50px 20px; /* Adjust the gap between items */
+    }
+
+    .coffee-item {
+        text-align: center; /* Center align the content */
+    }
+    .coffee-item img {
+        width: 200px; 
+        height: 200px; 
+        object-fit: cover;
+        border-radius: 10px; /*border radius for rounded corners */
+    }
+</style>
+<body>
+    <section id="header">
+        <a href="#"><img src="/static/img/logo/F4C9A9.jpg" alt=""></a>
+
+        <div>
+            <ul id="navbar"> 
+                <li><a href="/home">Home</a></li>
+                <li><a class="active" href="#">Shop</a></li>
+                <li><a href="/tips">Tips</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="cart.html">
+                    <i class="far fa-shopping-bag"></i>
+                </a></li> 
+                <li><a href="/logout">Logout</a></li> 
+            </ul>
+        </div>
+    </section>
+
+    <section id="main_shop">
+        <div class="coffee-container">
+            {% for coffee in coffees %}
+            <div class="coffee-item">
+                <img src="{{ url_for('static', filename=coffee.image) }}" alt="{{ coffee.name }}">
+                <div class="coffee-info">
+                    <span class="coffee-name">{{ coffee.name }}</span>
+                    <span class="coffee-price">${{ coffee.price }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
